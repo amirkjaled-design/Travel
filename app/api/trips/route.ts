@@ -16,7 +16,6 @@ export async function GET(){
         where: {
             trip: {
                 userId: session.user?.id,
-
             }
         },
         select: {
@@ -34,7 +33,7 @@ export async function GET(){
         const geocodeResult = await getCountryFromCoordinates(loc.lat, loc.lng)
 
         return {
-            name: `${loc.trip.title} - ${geocodeResult.formattedAddress}`,
+            name: `${loc.trip?.title ?? "Unknown trip"} - ${geocodeResult.formattedAddress}`,
             lat: loc.lat,
             lng: loc.lng,
             country: geocodeResult.country

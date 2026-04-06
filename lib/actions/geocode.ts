@@ -6,7 +6,7 @@ interface GeocodeResult {
 
 
 
-export default async function getCountryFromCoordinates(lat: number, lng: number): Promise<GeocodeResult> {
+export default async function getCountryFromCoordinates(lat: number | null, lng: number | null): Promise<GeocodeResult> {
     const apiKey = process.env.GOOGLE_MAPS_API_KEY!;
   const response = await fetch(
     `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${apiKey}`
