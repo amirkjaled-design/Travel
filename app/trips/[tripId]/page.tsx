@@ -5,17 +5,17 @@ import TripDetailClient from "@/component/trip-detail"
 
 
 export default async function TripDetail({params}: {params: Promise <{tripId: string}>}) {
-
+    
     const {tripId} = await params
-
-    {/* */}const session = await auth() 
+    {/* const session = await auth() 
 
     if(!session){
         return <div>Please sign in first</div>
-    }
+    } */}
+   
 
     const trip = await prisma.trip.findFirst({
-        where: {id: tripId,  userId: session.user?.id},
+        where: {id: tripId, },
         include: {locations: true}
     })
     console.log(trip)
