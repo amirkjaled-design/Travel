@@ -3,8 +3,8 @@ import AuthButton from "../component/auth-button"
 import { auth } from "@/auth";
 
 export default async function Home() {
-    const session = await auth();
-  const isLoggedIn = !!session?.user;
+    {/*const session = await auth();*/} 
+  const isLoggedIn = true
 
   return (  <div className="flex flex-col min-h-screen">
       {/* Main Content */}

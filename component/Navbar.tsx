@@ -15,17 +15,17 @@ export default function Navbar({session}: {session: Session | null}) {
         <Image src={"/logo.png"} alt="logo" width={50} height={50}/>
         <span className="font-bold text-2xl text-gray-800">Travel planner</span>
         </Link>
-        {session ? (<><div className="flex items-center space-x-8">
+        <><div className="flex items-center space-x-8">
             <Link href={"/trips"} className="text-slate-900 hover:text-sky-500">My trips</Link>
             <Link href={"/globe"} className="text-slate-900 hover:text-sky-500">Globe</Link>
         </div>
-        <div className="flex items-center space-x-4">
+       {/*<div className="flex items-center space-x-4">
             
             <button className="flex items-center justify-center bg-gray-800 py-3 px-6 rounded-md text-white hover:bg-gray-900 cursor-pointer font-bold" onClick={logout}>Sign out</button>
-        </div> </> ) : (  <div className="flex items-center space-x-4">
+        </div>  */} </>   <div className="flex items-center space-x-4">
             
             <button className="flex items-center justify-center bg-gray-800 py-3 px-6 rounded-md text-white hover:bg-gray-900 cursor-pointer font-bold" onClick={login}>Sign in</button>
-        </div>)}
+        </div>
         </div>
     </nav>
   )

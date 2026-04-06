@@ -8,7 +8,7 @@ export default async function TripDetail({params}: {params: Promise <{tripId: st
 
     const {tripId} = await params
 
-    const session = await auth()
+    {/* */}const session = await auth() 
 
     if(!session){
         return <div>Please sign in first</div>

@@ -20,11 +20,7 @@ async function geoCodeAddress(address: string){
 }
 
 export default async function addLocation(formdata: FormData, tripId: string) {
-    const session = await auth()
-
-    if(!session){
-        throw new Error("Unauthorized")
-    }
+    {/* */}
     const address = formdata.get("address")?.toString()
     if(!address){
         throw new Error ("Missing Address")
